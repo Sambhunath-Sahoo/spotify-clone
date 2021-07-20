@@ -10,7 +10,7 @@ import { useStateProviderValue } from './context/StateProvider';
 const spotify = new SpotifyWebApi;
 
 function App() {
-  const [{ user, token }, dispatch] = useStateProviderValue();
+  const [{ user, token}, dispatch] = useStateProviderValue();
  
   useEffect( () => {
 
@@ -32,8 +32,18 @@ function App() {
         dispatch({
           type: 'SET_USER',
           user: user
-        })
-      })
+        });
+      });
+
+
+      spotify.getUserPlaylists().then((playlists) => {
+        dispatch({
+          type: "SET_PLAYLISTS",
+          playlists: playlists,
+        });
+      });
+
+
     }
   }, []);
 
