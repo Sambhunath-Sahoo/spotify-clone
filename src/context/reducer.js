@@ -4,8 +4,7 @@ export const initialState = {
     playing: false,
     item: null,
     // REMOVE AFTER FINISHED DEVELOPING
-    // token: null
-    // token: 'BQCvWAYGcBbx1Hj0BgPXv_L4G-__OdSwsAsRNRfKauydeiEiwjGVU931FmbA9lC5qYRyO7qyyFEocxKeCLvLmr5E6eGtHGF4YePRLGKCsEkJSezDm4JYb9Q-bVOSeOiOBmqGDQB3UP2UC4od2i-LleO4TKBbUTcpX47YSiEBLARJpZjz'
+    token: 'BQCvWAYGcBbx1Hj0BgPXv_L4G-__OdSwsAsRNRfKauydeiEiwjGVU931FmbA9lC5qYRyO7qyyFEocxKeCLvLmr5E6eGtHGF4YePRLGKCsEkJSezDm4JYb9Q-bVOSeOiOBmqGDQB3UP2UC4od2i-LleO4TKBbUTcpX47YSiEBLARJpZjz'
 };
 
 // state is how it is currently look
