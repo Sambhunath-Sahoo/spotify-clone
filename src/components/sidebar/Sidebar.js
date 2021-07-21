@@ -4,17 +4,12 @@ import './Sidebar.css'
 import HomeIcon from "@material-ui/icons/Home";
 import SearchIcon from "@material-ui/icons/Search";
 import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
-import { getTokenFromUrl } from '../../spotify';
 import { useStateProviderValue } from '../../context/StateProvider';
 
 
 function Sidebar() {
-    const [{ playlists }, dispatch] = useStateProviderValue();
+    const [{ playlists }] = useStateProviderValue();
 
-    console.log(playlists);
-    playlists?.items?.forEach(element => {
-        console.log(element.name);
-    });
     return (
         <div className="sidebar">
             <img

@@ -1,4 +1,4 @@
-import { useState ,useEffect } from 'react';
+import { useEffect } from 'react';
 import './App.css';
 import Login from './components/login/Login';
 import { getTokenFromUrl } from './spotify';
@@ -7,10 +7,10 @@ import Player from './components/player/Player';
 import { useStateProviderValue } from './context/StateProvider';
 
 // object to interact with spotify 
-const spotify = new SpotifyWebApi;
+const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{ user, token}, dispatch] = useStateProviderValue();
+  const [{token}, dispatch] = useStateProviderValue();
  
   useEffect( () => {
 
@@ -43,13 +43,17 @@ function App() {
         });
       });
 
+      spotify.getPlaylist('3DIjw8eboATMgRN2RC6mz6').then(response => {
+        dispatch({
+          type: "SET_DISCOVER_WEEKLY",
+          discover_weekly: response,
+        })
+      })
 
     }
-  }, []);
+  }, [dispatch]);
 
-  // console.log("user🚀 ", user);
-  // console.log("token🚀 ", token);
-
+  
   return (
     <div className="app">
       {token ? <Player spotify={spotify} /> : <Login/>}

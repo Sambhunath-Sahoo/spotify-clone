@@ -1,15 +1,18 @@
 export const initialState = {
     user: null,
     playlists: [],
+    spotify: null,
+    top_artists: null,
+    discover_weekly: null,
     playing: false,
     item: null,
     // REMOVE AFTER FINISHED DEVELOPING
-    token: 'BQCvWAYGcBbx1Hj0BgPXv_L4G-__OdSwsAsRNRfKauydeiEiwjGVU931FmbA9lC5qYRyO7qyyFEocxKeCLvLmr5E6eGtHGF4YePRLGKCsEkJSezDm4JYb9Q-bVOSeOiOBmqGDQB3UP2UC4od2i-LleO4TKBbUTcpX47YSiEBLARJpZjz'
+    // token: 'BQCvWAYGcBbx1Hj0BgPXv_L4G-__OdSwsAsRNRfKauydeiEiwjGVU931FmbA9lC5qYRyO7qyyFEocxKeCLvLmr5E6eGtHGF4YePRLGKCsEkJSezDm4JYb9Q-bVOSeOiOBmqGDQB3UP2UC4od2i-LleO4TKBbUTcpX47YSiEBLARJpZjz'
 };
 
 // state is how it is currently look
 const reducer = (state, action) => {
- 
+
 
     // action -> type, [payload]
     switch (action.type) {
@@ -29,6 +32,12 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 playlists: action.playlists,
+            };
+
+        case "SET_DISCOVER_WEEKLY":
+            return {
+                ...state,
+                discover_weekly: action.discover_weekly,
             };
 
         default:
